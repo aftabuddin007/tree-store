@@ -49,8 +49,9 @@
 </section>  
     </header>
 
-<main class="bg-[#F0FDF4]">
-    <section class="banner flex px-4 flex-col sm:flex-row justify-between items-center bg-[#CFF0DC]">
+<main class="bg-[#F0FDF4] ">
+  <!-- banner section -->
+    <section class="banner flex px-4 flex-col sm:flex-row justify-between  bg-[#CFF0DC] ">
     <img src="./assets/hero-leaf1.png" alt="" class="">
     <div class="justify-center text-center ">
         <h2 class="text-[2rem] font-bold text-[#1F2937]">Plant a Tree, Grow a Future</h2>
@@ -60,21 +61,36 @@
     </div>
     <img src="./assets/hero-leaf2.png" alt="" class="hidden sm:block md:block lg:block ">
 </section>
-
+<!-- categori section -->
 <section class="choose-tree  ">
   <h2 class="text-[2rem] font-bold text-[#1F2937] text-center ">Choose Your Tree</h2>
-  <div class="flex   gap-6 mt-10 max-w-[1240px] mx-auto ">
-    <div id="left-tree" class="left-sec">
-    <h2 class="font-bold">Categories</h2>
+  <div class="grid grid-col-1 sm:grid-cols-5 gap-4 mt-10 max-w-7xl mx-auto px-5">
+    <div id="left-tree" class="left-sec col-span-1">
+    <h2 class="font-bold text-xl">Categories</h2>
     <ul id="category-container" class="mx-2">
       
       <!-- <li><button class="btn btn-soft btn-success">Fruit Trees</button></li> -->
     </ul>
   </div>
-  <div id="middle-tree" class="middle-sec grid grid-cols-3">
-    
+  <div id="middle-tree" class="middle-sec grid grid-cols-1 sm:grid-cols-3 gap-2 col-span-3">
+    <div id = 'middle-second'></div>
   </div>
-  <div id="right-tree" class="right-sec"></div>
+  <div  class="right-sec  h-full bg-white rounded-xl col-span-1 overflow-hidden">
+    <h2 class="font-bold text-xl ">Your Cart</h2>
+
+    <!-- <div class="flex justify-between items-center bg-green-200">
+      <div>
+        <h2>ManGo Tree</h2>
+        <p><span>500</span>* 1</p>
+      </div>
+      <p><i class="fa-solid fa-trash-can"></i></p>
+    </div>
+    <div class="flex justify-between">
+      <p>Total</p>
+      <p>৳1000</p>
+    </div>-->
+    <div id="right-tree"></div>
+  </div> 
   </div>
 
 </section>
