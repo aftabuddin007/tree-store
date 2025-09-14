@@ -12,7 +12,9 @@ const loadAllTree = ()=>{
     })
 }
 const loadCategory = ()=>{
+   
     fetch("https://openapi.programming-hero.com/api/categories")
+
     .then((res) => res.json())
     .then((data) => {
 const categories = data.categories;
@@ -21,7 +23,9 @@ showCategory(categories);
 
 })
     .catch(error => console.log(error));
+   
 };
+ 
 loadCategory();
 const showCategory = (categories)=>{
 //  categoryContainer.innerHTML += `
@@ -33,12 +37,13 @@ const showCategory = (categories)=>{
 //   `;
     categories.forEach(cat => {
        
-    categoryContainer.innerHTML += `<li onClick = "loadPlantByCat(${cat.id})"><button  class="  text-[gray]
+    categoryContainer.innerHTML += `<li onClick = "loadPlantByCat(${cat.id})"><button  class=" text-[gray]
      font-semibold bg-[#F0FDF4] hover:bg-[green] text-[12px]
     hover:text-[white] mb-1 p-2 rounded-lg cursor-pointer border-1 w-full">${cat.category_name}</button></li>`;
 });
     categoryContainer.addEventListener('click',(e)=>{
-        const allBtn = document.querySelectorAll("button")
+        const allBtn = document.querySelectorAll("button");
+        showLoading();
         allBtn.forEach(button => {
             button.classList.remove("bg-green-600", "text-white")
         });
@@ -47,13 +52,16 @@ const showCategory = (categories)=>{
             e.target.classList.add("bg-green-600", "text-white")
            // loadPlantByCat(e.target.id)
         }
+        
     });
 
 
 };
+
 const loadPlantByCat = (plantId)=>{
 
     const url = `https://openapi.programming-hero.com/api/category/${plantId}`;
+    showLoading()
         console.log(url)
     fetch(url)
     .then (res =>res.json())
@@ -70,6 +78,7 @@ const loadPlantDetail = async(id)=>{
     const res = await fetch(url);
     const details = await res.json();
     displayTreeDetails(details.plants);
+    
 };
 const displayTreeDetails = (tree)=>{
  console.log(tree);
@@ -94,7 +103,10 @@ const displayTreeDetails = (tree)=>{
         </div>
       `;
  document.getElementById("modalTree").showModal();
+ 
+
 }
+
 const displayPlant = (trees)=>{
    
     middleTree.innerHTML = ''
@@ -118,7 +130,9 @@ const displayPlant = (trees)=>{
       <button class="rounded-[50px] bg-[#15803D] text-[#ffffff] p-2 cursor-pointer w-full">Add to Cart</button>
     </div>`
         middleTree.append(card)
-    })
+        
+    });
+    
 }
 
 loadAllTree()
@@ -182,5 +196,8 @@ const handleCartItem = (itemId) => {
     yourCarts = filterCartId
     showCartItem(yourCarts)
     
+}
+const showLoading = () =>{
+     middleTree.innerHTML = `<div class = "text-center   justify-center"><span class=" loading loading-dots loading-sm"></span></div>`;
 }
  
