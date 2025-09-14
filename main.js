@@ -118,15 +118,20 @@ const showCartItem = (yourCarts)=>{
     cartTree.innerHTML = "";
     yourCarts.forEach(yourCart =>{
         cartTree.innerHTML += `
-        <div class="flex justify-between mb-3 items-center bg-green-200">
+        <div class="flex justify-between mb-3 items-center bg-green-200 px-4">
       <div>
         <h2>${yourCart.cartTitle}</h2>
         <p><span>${yourCart.teePrice}</span>* 1</p>
       </div>
-      <p><i class="fa-solid fa-trash-can"></i></p>
+      <p onclick = "handleCartItem('${yourCart.cartId}')"><i class="fa-solid fa-trash-can"></i></p>
     </div>
     
         `
     })
+}
+const handleCartItem = (itemId) => {
+    const filterCartId = yourCarts.filter(yourCart => yourCart.cartId !== itemId)
+    yourCarts = filterCartId
+    showCartItem(yourCarts)
 }
  
