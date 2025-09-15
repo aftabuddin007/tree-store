@@ -183,11 +183,11 @@ const showCartItem = (yourCarts)=>{
         cartTree.innerHTML += `
         <div class="flex justify-between mb-3 items-center bg-green-200 px-4">
       <div>
-        <h2>${yourCart.cartTitle}</h2>
-        <p>৳<span>${yourCart.plantPrice} </p>
+        <h2 class ="font-bold">${yourCart.cartTitle}</h2>
+        <p class ="font-bold">৳<span>${yourCart.plantPrice} </p>
       </div>
-      <p onclick = "handleCartItem('${yourCart.cartId}')"><i class="fa-solid fa-trash-can"></i></p>
-    </div>
+       <i class="fa-solid fa-trash text-black-500 cursor-pointer"
+               onclick="handleCartItem('${yourCart.cartId}')"></i></div>
     
         `
         

@@ -11,9 +11,9 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="">
-    <header>
-      <section class="navbar">
-    <div class="navbar bg-[#15803D] px-1 sm:px-15 ">
+    <header class="bg-[#15803D] ">
+      <section class="navbar ">
+    <div class="navbar  px-1 sm:px-15 ">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -22,12 +22,12 @@
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 ">
-        <li><a>About</a></li>
+        <li><a href="#about">About</a></li>
         <li>
           <a>Gallery</a>
          
         </li>
-        <li><a>Plant a Tree</a></li>
+        <li><a href="plantATree">Plant a Tree</a></li>
       </ul>
     </div>
     <img src="./assets/about.png" alt="" class="w-10 h-10 rounded-full mr-2">
@@ -35,11 +35,11 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="#" class="text-[white] font-semibold">About</a></li>
+      <li><a href="#about" class="text-[white] font-semibold">About</a></li>
       <li>
         <li><a href="#" class="text-[white] font-semibold">Gallery</a></li>
       </li>
-      <li><a href="#" class="text-[white] font-semibold">Plant a Tree</a></li>
+      <li><a href="#plantATree" class="text-[white] font-semibold">Plant a Tree</a></li>
     </ul>
   </div>
   <div class="navbar-end">
@@ -57,7 +57,7 @@
         <h2 class="text-[2rem] font-bold text-[#1F2937]">Plant a Tree, Grow a Future</h2>
         <p class="py-6 text-[1rem] text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future
         generations.</p>
-            <button class="rounded-[50px] bg-[#FACC15] text-[#15803D] p-2 cursor-pointer">Plant a Tree</button>
+            <button class="rounded-[50px] bg-[#FACC15] text-[#15803D] p-2 cursor-pointer">Get Involve</button>
     </div>
     <img src="./assets/hero-leaf2.png" alt="" class="hidden sm:block md:block lg:block ">
 </section>
@@ -71,7 +71,7 @@
    
   <div class="grid grid-col-1 sm:grid-cols-5 gap-4 mt-10 max-w-7xl mx-auto px-5">
     <div id="left-tree" class="left-sec col-span-1">
-    <h2 class="font-bold text-xl">Categories</h2>
+    <h2 class="font-bold text-xl mb-4">Categories</h2>
     <ul id="category-container" class="mx-2  ">
       
       <!-- <li><button class="btn btn-soft btn-success">Fruit Trees</button></li> -->
@@ -82,7 +82,7 @@
   
   </div>
   <div  class="right-sec  h-full  bg-white rounded-xl w-[300px] sm:col-span-1 overflow-hidden ">
-    <h2 class="font-bold text-xl ">Your Cart</h2>
+    <h2 class="font-bold text-xl mb-4">Your Cart</h2>
   <div id="right-tree"></div>
     <!-- <div class="flex justify-between items-center bg-green-200">
       <div>
@@ -93,7 +93,7 @@
     </div>-->
     <div class="flex justify-between border-t-4  border-black">
       <p class="font-bold">Total</p>
-      <p>৳ <span id="cartAllPrice">0</span></p>
+      <p class="font-bold ">৳ <span id="cartAllPrice">0</span></p>
     </div>
     
   </div> 
@@ -134,7 +134,7 @@
 
 
 
-<section class="about mt-15 px-4 sm:px-2">
+<section id="about" class="about mt-15 px-4 sm:px-2">
     <h2 class="text-[2rem] font-bold text-[#1F2937] text-center ">About the Campaign</h2>
     <div class="flex  flex-col md:flex-row lg:flex-row sm:flex-col justify-center items-center gap-6 mt-4">
         <img src="./assets/about.png" alt="">
@@ -152,21 +152,21 @@
 <section class="impact pt-7 mt-15 bg-[#CFF0DC]  ">
     <h2 class="text-[2rem] font-bold text-[#1F2937] text-center max-w-[1240px] mx-auto ">Our Impact</h2>
     <div class="flex flex-col md:flex-row lg:flex-row sm:flex-col justify-center items-center gap-2 mt-4  pb-8">
-        <div class="px-20 py-7 m-4  rounded-lg text-center  bg-[#ffffff]">
+        <div class="px-20 py-7 m-4  rounded-lg text-center  bg-[#ffffff] w-[300px] sm:mt-2">
             <h1 class="font-bold text-lg text-[#15803D]">500K+</h1>
         <p class="text-[1rem] text-[#1F2937]">Trees Planted</p>
         </div>
-        <div class="px-20 py-7 m-4  rounded-lg text-center  bg-[#ffffff]">
+        <div class="px-20 py-5 m-4  rounded-lg text-center  bg-[#ffffff] w-[300px] sm:mt-">
             <h1 class="font-bold text-lg text-[#15803D]">120+</h1>
         <p class="text-[1rem] text-[#1F2937]">Communities Involved</p>
         </div>
-        <div class="px-20 py-7 m-4  rounded-lg text-center  bg-[#ffffff]">
+        <div class="px-20 py-7 m-4  rounded-lg text-center  bg-[#ffffff] w-[300px] sm:mt-2">
             <h1 class="font-bold text-lg text-[#15803D]">30+</h1>
         <p class="text-[1rem] text-[#1F2937]">Countries Reached</p>
         </div>
     </div>
 </section>
-<section class="email bg-[#166534] pb-7" >
+<section id="plantATree" class="email bg-[#166534] pb-7" >
   <h2 class="text-[2rem] pt-10 font-bold text-[#ffffff] text-center  ">Plant a Tree Today</h2>
   <form action="" class="max-w-md mx-auto mt-4 pt-6 bg-[#15803D] rounded-lg flex flex-col  px-7">
     <input type="text" placeholder="Your Name" class="input w-full" /><br>
@@ -181,7 +181,7 @@
   </select><br>
   
 </fieldset>
-<button class="rounded-[50px] bg-[#FACC15] text-[#15803D] p-2 cursor-pointer ">Plant a Tree</button>
+<button class="rounded-[50px] bg-[#FACC15] text-[#15803D] p-2 cursor-pointer mb-5">Plant a Tree</button>
   </form>
 </section>
 </main>
