@@ -9,7 +9,8 @@ const loadAllTree = ()=>{
     .then(data =>{
     displayPlant(data.plants)
 
-    })
+    });
+    
 }
 const loadCategory = ()=>{
    
@@ -81,6 +82,7 @@ const loadPlantDetail = async(id)=>{
     
 };
 const displayTreeDetails = (tree)=>{
+    
  console.log(tree);
  const modalBox = document.getElementById("modalName");
     modalBox.innerHTML =` 
@@ -153,16 +155,21 @@ const handleCarts = (e)=>{
 
         const cartTitle = e.target.parentNode.children[1].innerText;
         //console.log(cartTitle)
-        const cartId = e.target.parentNode.id
+        const cartId = e.target.parentNode.id;
         //console.log(cartId)
-        const teePrice = e.target.parentNode.children[3].innerText
+        const teePrice = e.target.parentNode.children[3].innerText;
         //console.log(teePrice)
+        const plantPrice = parseFloat(teePrice.replace(/[^0-9.]/g, '')) 
+        
+        
+   
         yourCarts.push({
             cartId :cartId ,
             cartTitle:cartTitle,
-            teePrice:teePrice
+            plantPrice:plantPrice
 
         })
+        alert(`${cartTitle} has been add`);
         showCartItem(yourCarts)
         
 }
@@ -170,17 +177,14 @@ const showCartItem = (yourCarts)=>{
     cartTree.innerHTML = "";
     let totalPrice = 0;
     yourCarts.forEach(yourCart =>{
-        if(!treeCart.has(yourCarts.cartTitle) ){
-        alert(`${yourCart.cartTitle} has been add`);
-        
-    }
-    //total += yourCart.teePrice * cartItemCount;
+       
+    totalPrice += yourCart.plantPrice; 
 
         cartTree.innerHTML += `
         <div class="flex justify-between mb-3 items-center bg-green-200 px-4">
       <div>
         <h2>${yourCart.cartTitle}</h2>
-        <p><span>${yourCart.teePrice} </p>
+        <p>৳<span>${yourCart.plantPrice} </p>
       </div>
       <p onclick = "handleCartItem('${yourCart.cartId}')"><i class="fa-solid fa-trash-can"></i></p>
     </div>
@@ -190,11 +194,12 @@ const showCartItem = (yourCarts)=>{
         // cartCount.innerText = yourCarts.length
 
     })
+    document.getElementById("cartAllPrice").innerText = `${totalPrice}`
 }
 const handleCartItem = (itemId) => {
     const filterCartId = yourCarts.filter(yourCart => yourCart.cartId !== itemId)
-    yourCarts = filterCartId
-    showCartItem(yourCarts)
+    yourCarts = filterCartId;
+    showCartItem(yourCarts);
     
 }
 const showLoading = () =>{
