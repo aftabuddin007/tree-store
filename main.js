@@ -1,7 +1,7 @@
 const categoryContainer = document.getElementById('category-container');
  const middleTree = document.getElementById("middle-tree");
 
- const treeCart = new Map();
+// const treeCart = new Map();
  const cartCount = document.getElementById("cartItemCount")
 const loadAllTree = ()=>{
     
@@ -101,7 +101,7 @@ const displayTreeDetails = (tree)=>{
         <div class="modal-action">
      <form method="dialog">
          
-        <button class="btn">Close</button>
+        <button class="btn bg-[green] text-white">Close</button>
       </form>
         </div>
       `;
