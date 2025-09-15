@@ -4,6 +4,7 @@ const categoryContainer = document.getElementById('category-container');
  const treeCart = new Map();
  const cartCount = document.getElementById("cartItemCount")
 const loadAllTree = ()=>{
+    
     fetch("https://openapi.programming-hero.com/api/plants")
     .then(res => res.json())
     .then(data =>{
@@ -169,7 +170,7 @@ const handleCarts = (e)=>{
             plantPrice:plantPrice
 
         })
-        alert(`${cartTitle} has been add`);
+        alert(`${cartTitle} has been add to cart`);
         showCartItem(yourCarts)
         
 }
@@ -202,6 +203,7 @@ const handleCartItem = (itemId) => {
     showCartItem(yourCarts);
     
 }
+const loadingDa = document.getElementById("loadingDa")
 const showLoading = () =>{
      middleTree.innerHTML = `<div class = "text-center   justify-center"><span class=" loading loading-dots loading-sm"></span></div>`;
 }
